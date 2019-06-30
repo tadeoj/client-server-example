@@ -1,8 +1,9 @@
 package com.github.tadeoj.server.example;
 
+import com.github.tadeoj.server.example.domain.User;
+import com.google.gson.Gson;
 import io.vertx.core.AbstractVerticle;
 import io.vertx.core.Vertx;
-import io.vertx.core.http.HttpServer;
 import io.vertx.core.http.HttpServerOptions;
 import io.vertx.core.http.HttpServerResponse;
 import io.vertx.ext.web.Router;
@@ -12,22 +13,21 @@ import io.vertx.ext.web.handler.CorsHandler;
 public class ServerRest extends AbstractVerticle {
 
     private Vertx vertx;
+    private Gson gson;
 
     public static void main(String[] args) {
         new ServerRest().start();
     }
 
+    public ServerRest() {
+        gson = new Gson();
+    }
+
     @Override
     public void start() {
 
-        // La instancia del vertx
         vertx = Vertx.vertx();
-
-        // Se prepara las opciones del HttpServer
         HttpServerOptions httpServerOptions = new HttpServerOptions();
-
-        // La instancia del servidor http
-        HttpServer httpServer = vertx.createHttpServer(httpServerOptions);
 
         // Se crea el enrutador
         Router mainRouter = Router.router(vertx);
@@ -49,7 +49,7 @@ public class ServerRest extends AbstractVerticle {
         mainRouter.post("/sessionClose/").handler(this::sessionClose);
 
         // Se inicia el servidor Http
-        vertx.createHttpServer().requestHandler(mainRouter).listen(8080);
+        vertx.createHttpServer(httpServerOptions).requestHandler(mainRouter).listen(8080);
     }
 
     @Override
@@ -62,21 +62,45 @@ public class ServerRest extends AbstractVerticle {
     /////////////////////////////////////////////////////////////////////////////////////////////////
 
     private void userAuthUserSessionCreate(RoutingContext routingContext) {
+
         String credentials = routingContext.request().getParam("credentials");
+
+
         HttpServerResponse response = routingContext.response();
-        response.end("sessionId");
+        response.end("sessionId0001");
     }
 
     private void userGet(RoutingContext routingContext) {
-//        String session = routingContext.request().getHeader("user-session");
+
+        String session = routingContext.request().getHeader("user-session");
         HttpServerResponse response = routingContext.response();
-        response.end("Usuario");
+
+        User user = new User();
+        user.setName("Bruce");
+        user.setFirstName("Wayne");
+        user.setEmail("bruce@gotham.com");
+
+        String userJson = gson.toJson(user);
+
+        if (session != null && session.equals("sessionId0001")) {
+            response.end(userJson);
+        } else {
+            response.setStatusCode(401);
+            response.end();
+        }
+
     }
 
     private void sessionClose(RoutingContext routingContext) {
         String session = routingContext.request().getHeader("user-session");
         HttpServerResponse response = routingContext.response();
-        response.end("");
+
+        if (session != null && session.equals("sessionId0001")) {
+            response.end("");
+        } else {
+            response.setStatusCode(401);
+            response.end();
+        }
     }
 
 }

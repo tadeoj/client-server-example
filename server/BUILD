@@ -6,6 +6,8 @@ java_binary(
     main_class = "com.github.tadeoj.server.example.ServerRest",
     resources = glob(["src/main/resources/*.xml"]),
     deps = [
+        "@com_google_code_gson_gson//jar",
+        "@com_google_gson_gson//jar",
         "@io_netty_netty_buffer//jar",
         "@io_netty_netty_codec//jar",
         "@io_netty_netty_codec_http//jar",

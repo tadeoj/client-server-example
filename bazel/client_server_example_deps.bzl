@@ -242,6 +242,13 @@ def generated_maven_jars():
         licenses = ["notice"],  # Apache 2.0
     )
 
+    jvm_maven_import_external(
+        name = "com_google_code_gson_gson",
+        artifact = "com.google.code.gson:gson:2.8.5",
+        server_urls = ["http://central.maven.org/maven2"],
+        licenses = ["notice"],  # Apache 2.0
+    )
+
     http_jar(
         name = "org_dominokit_domino_ui",
         urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/domino-ui/1.0-SNAPSHOT/domino-ui-1.0-20190523.095624-445.jar"],
