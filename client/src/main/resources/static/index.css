@@ -1,0 +1,4 @@
+@external .ls-closed .bars::after, .ls-closed .bars::before;
+.ls-closed .bars::after, .ls-closed .bars::before {
+    top: 8px !important;
+}

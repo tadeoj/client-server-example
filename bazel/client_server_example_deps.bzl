@@ -153,7 +153,7 @@ def generated_maven_jars():
 
     jvm_maven_import_external(
         name = "com_google_auto_auto_common",
-        artifact = "com.google.auto:auto-common:0.9",
+        artifact = "com.google.auto:auto-common:0.10",
         server_urls = ["http://central.maven.org/maven2"],
         licenses = ["notice"],  # Apache 2.0
     )
@@ -249,14 +249,28 @@ def generated_maven_jars():
         licenses = ["notice"],  # Apache 2.0
     )
 
+    jvm_maven_import_external(
+        name = "org_apache_commons_commons_io",
+        artifact = "org.apache.commons:commons-io:1.3.2",
+        server_urls = ["http://central.maven.org/maven2"],
+        licenses = ["notice"],  # Apache 2.0
+    )
+
+    jvm_maven_import_external(
+        name = "javax_annotation_javax_annotation_api",
+        artifact = "javax.annotation:javax.annotation-api:1.2",
+        server_urls = ["http://central.maven.org/maven2"],
+        licenses = ["notice"],  # Apache 2.0
+    )
+
     http_jar(
         name = "org_dominokit_domino_ui",
-        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/domino-ui/1.0-SNAPSHOT/domino-ui-1.0-20190523.095624-445.jar"],
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/domino-ui/1.0-SNAPSHOT/domino-ui-1.0-20190701.084418-492.jar"],
     )
 
     http_jar(
         name = "org_dominokit_domino_ui_sources",
-        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/domino-ui/1.0-SNAPSHOT/domino-ui-1.0-20190523.095624-445-sources.jar"],
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/domino-ui/1.0-SNAPSHOT/domino-ui-1.0-20190701.084418-492-sources.jar"],
     )
 
     http_jar(
@@ -286,32 +300,32 @@ def generated_maven_jars():
 
     http_jar(
         name = "org_dominokit_jackson_jackson_apt",
-        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-apt/1.0-SNAPSHOT/jackson-apt-1.0-20190327.195616-15.jar"],
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-apt/1.0-SNAPSHOT/jackson-apt-1.0-20190527.210127-19.jar"],
     )
 
     http_jar(
         name = "org_dominokit_jackson_jackson_apt_sources",
-        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-apt/1.0-SNAPSHOT/jackson-apt-1.0-20190327.195616-15-sources.jar"],
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-apt/1.0-SNAPSHOT/jackson-apt-1.0-20190527.210127-19-sources.jar"],
     )
 
     http_jar(
         name = "org_dominokit_jackson_jackson_apt_processor",
-        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-apt-processor/1.0-SNAPSHOT/jackson-apt-processor-1.0-20190327.195608-15.jar"],
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-apt-processor/1.0-SNAPSHOT/jackson-apt-processor-1.0-20190527.210124-19.jar"],
     )
 
     http_jar(
         name = "org_dominokit_jackson_jackson_apt_processor_sources",
-        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-apt-processor/1.0-SNAPSHOT/jackson-apt-processor-1.0-20190327.195608-15-sources.jar"],
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-apt-processor/1.0-SNAPSHOT/jackson-apt-processor-1.0-20190527.210124-19-sources.jar"],
     )
 
     http_jar(
         name = "org_dominokit_jackson_jackson_super",
-        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-super/1.0-SNAPSHOT/jackson-super-1.0-20190327.195618-15.jar"],
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-super/1.0-SNAPSHOT/jackson-super-1.0-20190527.210128-19.jar"],
     )
 
     http_jar(
         name = "org_dominokit_jackson_jackson_super_sources",
-        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-super/1.0-SNAPSHOT/jackson-super-1.0-20190327.195618-15-sources.jar"],
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jackson/jackson-super/1.0-SNAPSHOT/jackson-super-1.0-20190527.210128-19-sources.jar"],
     )
 
     http_jar(
@@ -364,15 +378,40 @@ def generated_maven_jars():
         urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/domino-apt-commons/1.0-rc.4-SNAPSHOT/domino-apt-commons-1.0-rc.4-20190623.075032-6-sources.jar"],
     )
 
-    #    http_jar(
-    #        name = "org_dominokit_jaxrs_super",
-    #        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jaxrs-super/1.0-rc.4-SNAPSHOT/jaxrs-super-1.0-rc.4-20190619.133613-17.jar"],
-    #    )
-    #
-    #    http_jar(
-    #        name = "org_dominokit_jaxrs_super_sources",
-    #        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jaxrs-super/1.0-rc.4-SNAPSHOT/jaxrs-super-1.0-rc.4-20190619.133613-17-sources.jar"],
-    #    )
+    http_jar(
+        name = "org_dominokit_domino_history_shared",
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/domino-history-shared/1.0-rc.4-SNAPSHOT/domino-history-shared-1.0-rc.4-20190620.092206-6.jar"],
+    )
+
+    http_jar(
+        name = "org_dominokit_domino_history_gwt",
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/domino-history-gwt/1.0-rc.4-SNAPSHOT/domino-history-gwt-1.0-rc.4-20190620.092200-6.jar"],
+    )
+
+    http_jar(
+        name = "org_dominokit_domino_aggregator_shared",
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/domino-aggregator-shared/1.0-rc.4-SNAPSHOT/domino-aggregator-shared-1.0-rc.4-20190528.081337-7.jar"],
+    )
+
+    http_jar(
+        name = "org_dominokit_jaxrs_super",
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/jaxrs-super/1.0-rc.4-SNAPSHOT/jaxrs-super-1.0-rc.4-20190619.133613-17.jar"],
+    )
+
+    http_jar(
+        name = "org_dominokit_domino_slf4j_logger",
+        urls = ["https://oss.sonatype.org/content/repositories/snapshots/org/dominokit/domino-slf4j-logger/1.0-rc.4-SNAPSHOT/domino-slf4j-logger-1.0-rc.4-20190527.201020-4.jar"],
+    )
+
+    http_jar(
+        name = "org_gwtproject_regexp",
+        urls = ["https://repo.vertispan.com/gwt-snapshot/org/gwtproject/regexp/1.0-SNAPSHOT/regexp-1.0-20180609.203147-1.jar"],
+    )
+
+    http_jar(
+        name = "org_gwtproject_core",
+        urls = ["https://repo.vertispan.com/gwt-snapshot/org/gwtproject/core/gwt-core/1.0-SNAPSHOT/gwt-core-1.0-20190527.022308-3.jar"],
+    )
 
     http_jar(
         name = "org_gwtproject_xhr",
