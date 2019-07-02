@@ -19,7 +19,7 @@ java_binary(
         "@io_netty_netty_resolver//jar",
         "@io_netty_netty_tcnative_boringssl_static//jar",
         "@io_netty_netty_transport//jar",
-        "@io_vertx_vertx_core//jar",
+        "@maven//:io_vertx_vertx_core",
         "@io_vertx_vertx_web//jar",
         "@io_vertx_vertx_web_common//jar",
     ],
