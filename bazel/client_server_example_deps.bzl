@@ -41,6 +41,18 @@ def generated_maven_jars():
             "com.google.auto.service:auto-service:1.0-rc4",
             "io.netty:netty-buffer:4.1.36.Final",
             "io.netty:netty-codec:4.1.36.Final",
+            "io.netty:netty-codec-http:4.1.36.Final",
+            "io.netty:netty-codec-http2:4.1.36.Final",
+            "io.netty:netty-codec-socks:4.1.36.Final",
+            "io.netty:netty-common:4.1.36.Final",
+            "io.netty:netty-handler:4.1.36.Final",
+            "io.netty:netty-handler-proxy:4.1.36.Final",
+            "io.netty:netty-resolver:4.1.36.Final",
+            "io.netty:netty-tcnative-boringssl-static:2.0.25.Final",
+            "io.netty:netty-transport:4.1.36.Final",
+            "com.google.code.gson:gson:2.8.5",
+            "org.apache.commons:commons-io:1.3.2",
+            "javax.annotation:javax.annotation-api:1.2",
         ],
         repositories = [
             "https://oss.sonatype.org/content/repositories/snapshots",
@@ -49,90 +61,6 @@ def generated_maven_jars():
             "https://repo1.maven.org/maven2",
         ],
         fetch_sources = True,
-    )
-
-    jvm_maven_import_external(
-        name = "io_netty_netty_codec_http",
-        artifact = "io.netty:netty-codec-http:4.1.36.Final",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "io_netty_netty_codec_http2",
-        artifact = "io.netty:netty-codec-http2:4.1.36.Final",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "io_netty_netty_codec_socks",
-        artifact = "io.netty:netty-codec-socks:4.1.36.Final",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "io_netty_netty_common",
-        artifact = "io.netty:netty-common:4.1.36.Final",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "io_netty_netty_handler",
-        artifact = "io.netty:netty-handler:4.1.36.Final",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "io_netty_netty_handler_proxy",
-        artifact = "io.netty:netty-handler-proxy:4.1.36.Final",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "io_netty_netty_resolver",
-        artifact = "io.netty:netty-resolver:4.1.36.Final",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "io_netty_netty_tcnative_boringssl_static",
-        artifact = "io.netty:netty-tcnative-boringssl-static:2.0.25.Final",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "io_netty_netty_transport",
-        artifact = "io.netty:netty-transport:4.1.36.Final",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "com_google_code_gson_gson",
-        artifact = "com.google.code.gson:gson:2.8.5",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "org_apache_commons_commons_io",
-        artifact = "org.apache.commons:commons-io:1.3.2",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
-    )
-
-    jvm_maven_import_external(
-        name = "javax_annotation_javax_annotation_api",
-        artifact = "javax.annotation:javax.annotation-api:1.2",
-        server_urls = ["http://central.maven.org/maven2"],
-        licenses = ["notice"],  # Apache 2.0
     )
 
     http_jar(
