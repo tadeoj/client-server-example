@@ -7,7 +7,6 @@ java_binary(
     resources = glob(["src/main/resources/*.xml"]),
     deps = [
         "@maven//:com_google_code_gson_gson",
-        "@maven//:com_google_gson_gson",
         "@maven//:io_netty_netty_buffer",
         "@maven//:io_netty_netty_codec",
         "@maven//:io_netty_netty_codec_http",
